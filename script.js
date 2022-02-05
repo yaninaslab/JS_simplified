@@ -93,3 +93,17 @@ const array = [
 console.log(array[0][3]);
 console.log(array[1][2]);
 console.log(array[2][0]);
+
+const items = [
+  { price: 10 },
+  { price: 20 },
+  { price: 14 },
+  { price: 1 },
+  { price: 6 },
+];
+
+const sum = items.reduce((sum, item) => {
+  return sum + item.price;
+}, 0);
+
+console.log(sum);
