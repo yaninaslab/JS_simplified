@@ -107,3 +107,31 @@ const sum = items.reduce((sum, item) => {
 }, 0);
 
 console.log(sum);
+
+function addByX(num1) {
+  const newFunc = (num2) => num1 + num2;
+
+  return newFunc;
+}
+
+const addByTwo = addByX(2);
+let result = addByTwo(3);
+
+console.log(result);
+
+const users = [
+  { id: 1, name: "Al", isActive: true, age: 20 },
+  { id: 2, name: "Arif", isActive: true, age: 18 },
+  { id: 3, name: "Al Arif", isActive: false, age: 30 },
+];
+const names = users
+  .sort((user1, user2) => (user1.age < user2.age ? 1 : -1))
+  .filter((user) => user.isActive)
+  .map((user) => user.name);
+console.log(names);
+
+let names2 = users
+  .filter((o) => o.isActive === true)
+  .sort((a, b) => b.age - a.age)
+  .map((user) => user.name);
+console.log(names2);
