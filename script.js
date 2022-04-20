@@ -135,3 +135,32 @@ let names2 = users
   .sort((a, b) => b.age - a.age)
   .map((user) => user.name);
 console.log(names2);
+
+for (let i = 0; i <= 10; i++) {
+  if (i === 5) break;
+  console.log(i);
+}
+
+const person = {
+  name: "Kyle",
+  friend: {
+    name: "Joe",
+    friend: {
+      name: "Sally",
+    },
+  },
+};
+
+// let currentPerson = person;
+// while (currentPerson != null) {
+//   console.log(currentPerson.name);
+//   currentPerson = currentPerson.friend;
+// }
+
+function printNames(currentPerson) {
+  if (currentPerson == null) return;
+  console.log(currentPerson.name);
+  printNames(currentPerson.friend);
+}
+
+printNames(person);
