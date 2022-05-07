@@ -371,7 +371,7 @@ const totalPrice = order.reduce((acc, item) => {
 }, 0);
 console.log(totalPrice);
 
-const players = [
+const players2 = [
   {
     id: 1,
     name: "Andres",
@@ -399,5 +399,116 @@ const players = [
 ];
 
 // const messi = players.find((player) => player.surname.includes("Messi"));
-const messi = players.find((player) => player.surname === "Messi");
-console.log(messi);
+// const messi = players.find((player) => player.surname === "Messi");
+// console.log(messi);
+
+const food = ["Apple", "Melon", "Banana", "Yogurt", "Orange", "Stawberry"];
+
+const players1 = [
+  {
+    id: 1,
+    name: "Cristiano",
+    surname: "Ronaldo",
+    club: "Juventus",
+  },
+  {
+    id: 2,
+    name: "Lionel",
+    surname: "Messi",
+    club: "Barcelona",
+  },
+  {
+    id: 3,
+    name: "Karim",
+    surname: "Benzema",
+    club: "Real Madrid",
+  },
+  {
+    id: 4,
+    name: "Maxi",
+    surname: "Gomez",
+    club: "Valencia",
+  },
+  {
+    id: 5,
+    name: "Quincy",
+    surname: "Promes",
+    club: "Spartak",
+  },
+];
+
+function sorting(a, b) {
+  if (a > b) {
+    return 1;
+  }
+  if (a < b) {
+    return -1;
+  }
+  return 0;
+}
+
+food.sort(sorting);
+console.log(food);
+
+players1.sort((a, b) => sorting(a.surname, b.surname));
+console.log(players1);
+
+function getInfo() {
+  return ["BMW", "X3"];
+}
+const [carName, carSeries] = getInfo();
+console.log(getInfo());
+
+const link = {
+  href: "#",
+  title: "simple link",
+  target: "blank",
+  className: "link",
+  id: null,
+  children: {
+    span: {
+      content: "Click me",
+      className: "anchor",
+    },
+  },
+};
+
+const {
+  target,
+  className,
+  children: {
+    span: { content, className: renamed },
+  },
+} = link || {};
+
+console.log(target, className, content, renamed);
+
+const playersNames = [
+  {
+    id: 1,
+    name: "Andres",
+    surname: "Iniesta",
+    club: "Vissel Cobe",
+  },
+  {
+    id: 2,
+    name: "Eden",
+    surname: "Hazard",
+    club: "Real Madrid",
+  },
+  {
+    id: 3,
+    name: "Mo",
+    surname: "Salah",
+    club: "Liverpool",
+  },
+  {
+    id: 4,
+    name: "Lionel",
+    surname: "Messi",
+    club: "Barcelona",
+  },
+];
+
+const jsonPlayers = JSON.stringify(playersNames);
+console.log(jsonPlayers);
