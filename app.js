@@ -78,3 +78,15 @@ buttons.forEach((btn) =>
     panel.classList.toggle("show");
   })
 );
+
+const btns = document.querySelectorAll("button");
+
+for (let i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", handleClick);
+}
+
+function handleClick(event) {
+  const btn = event.target;
+
+  btn.dataset.clicked = +btn.dataset.clicked + 1;
+}
