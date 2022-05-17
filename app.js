@@ -90,3 +90,46 @@ function handleClick(event) {
 
   btn.dataset.clicked = +btn.dataset.clicked + 1;
 }
+
+const buttonClick = document.querySelector("button");
+const inputs = document.querySelectorAll("input");
+
+const form = document.querySelector("form");
+
+inputs.forEach((input) => input.addEventListener("keypress", handleEvent));
+
+form.addEventListener("submit", handleSubmit);
+
+function handleEvent(event) {
+  //   console.log(event);
+  //   console.dir(event.target);
+
+  if (event.key === "Enter") {
+    event.preventDefault();
+    event.target.nextElementSibling.focus();
+  }
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  if (validate()) {
+    // submit AJAX
+    form.reset();
+  } else {
+    alert("Fix empty fields");
+  }
+}
+
+function validate() {
+  let isValid = true;
+  inputs.forEach((input) => {
+    if (!input.value.trim()) {
+      input.style.borderColor = "red";
+      isValid = false;
+    } else {
+      input.style.borderColor = "currentColor";
+    }
+  });
+  return isValid;
+}
