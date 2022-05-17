@@ -121,6 +121,30 @@
       h1 {
         text-align: center;
       }
+      :root {
+        color: #222;
+        font-family: Arial;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        background-color: #eee;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #ddd;
+      }
+
+      .spoiler {
+        text-align: center;
+        padding: 1rem;
+        border: 1px solid magenta;
+      }
+      .closed {
+        display: none;
+      }
     </style>
   </head>
 
@@ -193,6 +217,12 @@
     </div>
 
     <ul id="todos"></ul>
+
+    <button id="myBtn">Toggle spoiler</button>
+
+    <div id="spoiler" class="closed spoiler">
+      <p>Some text in the Spoiler..</p>
+    </div>
     <script src="app.js"></script>
     <!-- <script src="form.js"></script> -->
     <!-- <script src="script.js"></script> -->
