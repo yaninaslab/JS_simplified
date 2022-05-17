@@ -95,6 +95,32 @@
       .panel.show {
         display: block;
       }
+      ul {
+        display: block;
+        list-style: none;
+        padding: 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 300px;
+        margin: auto;
+        padding: 1rem;
+      }
+
+      li {
+        text-decoration: underline;
+        line-height: 1.8;
+      }
+      li:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
+      div {
+        text-align: center;
+        padding: 1rem;
+      }
+      h1 {
+        text-align: center;
+      }
     </style>
   </head>
 
@@ -159,8 +185,16 @@
 
       <button>Log In</button>
     </form>
-    <!-- <script src="app.js"></script> -->
-    <script src="form.js"></script>
+    <h1>DOM API</h1>
+
+    <div>
+      <input type="text" placeholder="todo" />
+      <button>Add Task</button>
+    </div>
+
+    <ul id="todos"></ul>
+    <script src="app.js"></script>
+    <!-- <script src="form.js"></script> -->
     <!-- <script src="script.js"></script> -->
   </body>
 </html>
