@@ -213,3 +213,42 @@ function dettachSpoilerEvents() {
 function handleEscape(event) {
   if (event.key === "Escape") toggleSpoiler();
 }
+
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  area() {
+    return this.width * this.height;
+  }
+}
+
+const rect1 = new Rectangle(5, 6);
+console.log(rect1.area()); // должен вернуть 30
+
+function diagonalDifference(arr) {
+  let sumPrincipal = 0;
+  let sumOther = 0;
+  let n = arr.length;
+
+  for (let i = 0; i < n; i++) {
+    sumPrincipal += arr[i][i];
+    sumOther += arr[i][n - 1 - i];
+  }
+  const finalDifference = Math.abs(sumOther - sumPrincipal);
+  console.log(finalDifference);
+}
+
+// const a = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [9, 8, 9],
+// ];
+let arr = [
+  [11, 2, 4],
+  [4, 5, 6],
+  [10, 8, -12],
+];
+diagonalDifference(arr);
